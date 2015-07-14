@@ -6,3 +6,8 @@ RUN apt-get -y update && \
 
 VOLUME [ "/dev/bus/usb", "/fastboot" ]
 WORKDIR /fastboot
+
+# Run fastboot by default, with "help" as the default argument. This can be
+# overridden at `docker run`-time.
+ENTRYPOINT [ "fastboot" ]
+CMD [ "help" ]
