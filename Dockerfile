@@ -1,8 +1,7 @@
-FROM ubuntu:16.04
-MAINTAINER M Parker <mparker17@536298.no-reply.drupal.org>
+FROM ubuntu:18.04
 
 RUN apt-get -y update && \
-    apt-get -y install android-tools-fastboot
+    apt-get -y install fastboot
 
 VOLUME [ "/dev/bus/usb", "/fastboot" ]
 WORKDIR /fastboot
